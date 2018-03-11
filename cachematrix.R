@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This function finds the inverse of the matrix, but if the inverse has already been cached displays that
 
 cacheSolve <- function(x, ...) {
-        ## find if an inverse of x is alreaded stored. if it is return cached data, if not 
+        ## find if an inverse of x is alreaded stored. if it is return cached data, if not find inverse
         i <- x$geti()
         if(!is.null(i)) {
                 message("getting cached data")
