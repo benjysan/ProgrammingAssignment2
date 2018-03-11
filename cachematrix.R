@@ -10,7 +10,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 i <<- NULL
         }
         get <- function() x
-        seti <- function(inverse) i <<- inverse
+        seti <- function(inv) i <<- inv
         geti <- function() i
         list(set = set, get = get,
              seti = seti,
@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This function finds the inverse of the matrix, but if the inverse has already been cached displays that
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        ## find if an inverse of x is alreaded stored. if it is return cached data, if not 
         i <- x$geti()
         if(!is.null(i)) {
                 message("getting cached data")
